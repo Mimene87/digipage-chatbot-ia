@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DIGIPAGE - Chatbot IA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.179/pdf.min.js"></script>
+    <script src="assistant.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        h1 { color: #333; }
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+        #user-input {
+            width: 80%;
+            padding: 8px;
+        }
+        #send-button {
+            padding: 8px 12px;
+        }
+        .message { margin: 5px 0; }
+        .user { color: blue; }
+        .bot { color: green; }
+    </style>
+</head>
+<body>
+    <h1>🤖 DIGIPAGE - Chatbot de Révision</h1>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Pose ta question..." />
+    <button id="send-button" onclick="handleQuestion(document.getElementById('user-input').value)">Envoyer</button>
+
+    <script>
+        // Chargement automatique du fichier PDF
+        window.onload = function() {
+            loadPDF('support_chatbot.pdf', 'data/support_chatbot.pdf');
+        };
+    </script>
+</body>
+</html>
